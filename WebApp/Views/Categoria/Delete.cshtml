@@ -1,0 +1,26 @@
+﻿@model Categoria
+
+<form method="post" asp-action="Delete">
+	<div class="border p-3 mt-4">
+		<input asp-for="id" hidden />
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="form-group mb-3">
+			<label asp-for="Name" class="form-label mt-4">Nombre:</label>
+			<input class="form-control" disabled  asp-for="Name" aria-describedby="emailHelp" placeholder="Introduce tu nombre">
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="form-group mb-3">
+			<label asp-for="displayOrder" class="form-label mt-4">Orden:</label>
+			<input class="form-control" disabled asp-for="displayOrder" placeholder="Ingresa el nombre de tu orden">
+			<span asp-validation-for="displayOrder" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-danger" style="width:150px">Eliminar</button>
+		<a asp-controller="Categoria" asp-action="Index" class="btn btn-primary" style="width:150px"> Volver</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+	<partial name="_ValidationScriptsPartial" />
+	}
+}
